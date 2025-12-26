@@ -1,0 +1,29 @@
+# Dependencias de Node (si se usan en el futuro)
+node_modules/
+npm-debug.log*
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos de IDE/Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Archivos temporales
+*.tmp
+*.temp
+*.log
+
+# Archivos de backup
+*.bak
+*.backup
+
+# Variables de entorno
+.env
+.env.local
+.env.*.local
