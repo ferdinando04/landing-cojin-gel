@@ -38,6 +38,90 @@
 
     /* ═══════════════════════════════════════════════════════════════════ */
 
+    /* ═══════════════════════════════════════════════════════════════════ */
+    /* BOTONES DE SHOPIFY - Colores optimizados para conversión           */
+    /* Investigación: Orange/Red aumenta conversiones 21-34% vs negro     */
+    /* ═══════════════════════════════════════════════════════════════════ */
+
+    /* Botón "Agregar al carrito" - NARANJA VIBRANTE (estilo Amazon) */
+    button[name="add"],
+    .product-form__submit,
+    .btn.product-form__cart-submit,
+    .add-to-cart,
+    [data-add-to-cart],
+    .product-form button[type="submit"],
+    button.product-form__submit {
+        background: linear-gradient(135deg, #FF6B35 0%, #FF8C42 50%, #FF6B35 100%) !important;
+        background-size: 200% auto !important;
+        color: white !important;
+        border: none !important;
+        border-radius: 50px !important;
+        padding: 18px 35px !important;
+        font-size: 18px !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+        box-shadow: 0 6px 25px rgba(255, 107, 53, 0.4) !important;
+        transition: all 0.3s ease !important;
+        cursor: pointer !important;
+    }
+
+    button[name="add"]:hover,
+    .product-form__submit:hover,
+    .btn.product-form__cart-submit:hover,
+    .add-to-cart:hover {
+        transform: scale(1.03) !important;
+        box-shadow: 0 8px 35px rgba(255, 107, 53, 0.6) !important;
+        background-position: right center !important;
+    }
+
+    /* Botón "Comprar ahora" - ROJO URGENCIA */
+    .shopify-payment-button button,
+    .shopify-payment-button__button,
+    [data-shopify="payment-button"] button,
+    .shopify-payment-button .shopify-payment-button__button--unbranded,
+    button.shopify-payment-button__button {
+        background: linear-gradient(135deg, #FF2A00 0%, #FF4D2A 50%, #FF2A00 100%) !important;
+        background-size: 200% auto !important;
+        color: white !important;
+        border: none !important;
+        border-radius: 50px !important;
+        padding: 18px 35px !important;
+        font-size: 18px !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+        box-shadow: 0 6px 25px rgba(255, 42, 0, 0.4) !important;
+        transition: all 0.3s ease !important;
+    }
+
+    .shopify-payment-button button:hover,
+    .shopify-payment-button__button:hover {
+        transform: scale(1.03) !important;
+        box-shadow: 0 8px 35px rgba(255, 42, 0, 0.6) !important;
+        background-position: right center !important;
+    }
+
+    /* Animación sutil de pulso para llamar la atención */
+    @keyframes buttonPulse {
+
+        0%,
+        100% {
+            box-shadow: 0 6px 25px rgba(255, 107, 53, 0.4);
+        }
+
+        50% {
+            box-shadow: 0 6px 35px rgba(255, 107, 53, 0.7);
+        }
+    }
+
+    button[name="add"],
+    .product-form__submit {
+        animation: buttonPulse 2s ease-in-out infinite !important;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════════ */
+
     /* Reset y Variables */
     .nova-landing * {
         box-sizing: border-box;
