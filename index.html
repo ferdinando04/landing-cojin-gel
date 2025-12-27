@@ -126,6 +126,36 @@
         }
     }
 
+    /* ═══════════════════════════════════════════════════════════════════ */
+    /* BOTÓN RELEASIT COD - "Pagar Contra Reembolso" (App de Shopify)      */
+    /* ═══════════════════════════════════════════════════════════════════ */
+
+    #rsi_buy_now_button,
+    #cart-wrapper button,
+    button.sc-eVqvcJ,
+    [id*="rsi_buy"] {
+        background: linear-gradient(135deg, #00D4AA 0%, #00A085 50%, #00D4AA 100%) !important;
+        background-size: 200% auto !important;
+        color: white !important;
+        border: none !important;
+        border-radius: 50px !important;
+        padding: 20px 40px !important;
+        font-size: 18px !important;
+        font-weight: 800 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+        box-shadow: 0 8px 30px rgba(0, 212, 170, 0.4) !important;
+        transition: all 0.3s ease !important;
+        cursor: pointer !important;
+        animation: codPulse 2s ease-in-out infinite, codGlow 2.5s ease-in-out infinite !important;
+    }
+
+    #rsi_buy_now_button:hover,
+    #cart-wrapper button:hover {
+        transform: scale(1.05) !important;
+        box-shadow: 0 12px 45px rgba(0, 212, 170, 0.7) !important;
+    }
+
     @keyframes buttonPulse {
 
         0%,
@@ -1194,27 +1224,36 @@
 <!-- JAVASCRIPT PARA LOS BOTONES CTA -->
 <script>
     function scrollToCart() {
-        var addToCartBtn = document.querySelector('button[name="add"], .product-form__submit, .add-to-cart, [data-add-to-cart], .shopify-payment-button, button.btn.product-form__cart-submit');
+        // PRIORIDAD 1: Botón Releasit COD "Pagar Contra Reembolso"
+        var addToCartBtn = document.querySelector('#rsi_buy_now_button');
+
+        // PRIORIDAD 2: Contenedor del carrito
         if (!addToCartBtn) {
-            addToCartBtn = document.querySelector('#product-form, .product-form, [data-product-form], form[action*="/cart/add"]');
+            addToCartBtn = document.querySelector('#cart-wrapper button');
         }
+
+        // PRIORIDAD 3: Botones estándar de Shopify
         if (!addToCartBtn) {
-            addToCartBtn = document.querySelector('.product__info-container, .product-single, .product__title');
+            addToCartBtn = document.querySelector('.shopify-payment-button, .product-form__submit, button[name="add"]');
         }
+
         if (addToCartBtn) {
             var elementPosition = addToCartBtn.getBoundingClientRect().top + window.pageYOffset;
-            var offsetPosition = elementPosition - 100;
+            var offsetPosition = elementPosition - 120;
             window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+
+            // Efecto visual de destaque
             setTimeout(function () {
                 addToCartBtn.style.transition = 'all 0.3s ease';
-                addToCartBtn.style.transform = 'scale(1.05)';
-                addToCartBtn.style.boxShadow = '0 0 30px rgba(255,42,0,0.6)';
+                addToCartBtn.style.transform = 'scale(1.08)';
+                addToCartBtn.style.boxShadow = '0 0 40px rgba(0, 212, 170, 0.8)';
                 setTimeout(function () {
                     addToCartBtn.style.transform = 'scale(1)';
                     addToCartBtn.style.boxShadow = '';
-                }, 500);
-            }, 600);
+                }, 600);
+            }, 500);
         } else {
+            // Fallback: scroll arriba
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     }
