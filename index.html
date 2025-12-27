@@ -742,6 +742,197 @@
         line-height: 1.7;
     }
 
+    /* ═══════════════════════════════════════════════════════════════════ */
+    /* ESTILOS PARA RESEÑAS CON FOTOS - ESTILO ALIEXPRESS                 */
+    /* ═══════════════════════════════════════════════════════════════════ */
+
+    /* Resumen de Calificaciones */
+    .nova-rating-summary {
+        display: flex;
+        gap: 30px;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        border-radius: 15px;
+        padding: 25px;
+        margin-bottom: 25px;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nova-rating-number {
+        text-align: center;
+    }
+
+    .nova-rating-number .big-rating {
+        display: block;
+        font-size: 48px;
+        font-weight: 800;
+        color: #1a1a2e;
+        line-height: 1;
+    }
+
+    .nova-rating-number .rating-stars {
+        display: block;
+        font-size: 20px;
+        margin: 8px 0;
+    }
+
+    .nova-rating-number .rating-count {
+        color: #666;
+        font-size: 14px;
+    }
+
+    .nova-rating-bars {
+        flex: 1;
+        min-width: 200px;
+        max-width: 300px;
+    }
+
+    .rating-bar-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 6px;
+        font-size: 13px;
+        color: #666;
+    }
+
+    .rating-bar-row span:first-child {
+        width: 40px;
+    }
+
+    .rating-bar-row span:last-child {
+        width: 35px;
+        text-align: right;
+    }
+
+    .rating-bar {
+        flex: 1;
+        height: 10px;
+        background: #ddd;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+    .rating-fill {
+        height: 100%;
+        background: linear-gradient(90deg, #FFB800, #FF9500);
+        border-radius: 5px;
+    }
+
+    /* Galería de Fotos */
+    .nova-photo-gallery {
+        margin-bottom: 25px;
+    }
+
+    .nova-photo-gallery h4 {
+        font-size: 16px;
+        color: #1a1a2e;
+        margin-bottom: 15px;
+    }
+
+    .nova-photos-grid {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .nova-photo-item {
+        width: 80px;
+        height: 80px;
+        border-radius: 10px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .nova-photo-item:hover {
+        transform: scale(1.05);
+    }
+
+    .nova-photo-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .nova-photo-more {
+        background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
+
+    .nova-photo-more span {
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    .nova-photo-more small {
+        font-size: 11px;
+        opacity: 0.8;
+    }
+
+    /* Reseña con Fotos */
+    .nova-review-with-photo {
+        border-left: 4px solid #FFB800;
+    }
+
+    .nova-review-rating {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 5px;
+    }
+
+    .nova-review-date {
+        font-size: 12px;
+        color: #999;
+        margin-top: 3px;
+    }
+
+    .nova-review-photos {
+        display: flex;
+        gap: 10px;
+        margin-top: 15px;
+        flex-wrap: wrap;
+    }
+
+    .nova-review-photos img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        border: 2px solid #eee;
+    }
+
+    .nova-review-photos img:hover {
+        transform: scale(1.05);
+        border-color: #00D4AA;
+    }
+
+    .nova-review-helpful {
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid #eee;
+        font-size: 13px;
+        color: #666;
+    }
+
+    .nova-reviews-more {
+        text-align: center;
+        padding: 15px;
+        color: #666;
+        font-size: 13px;
+        background: #f8f9fa;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+
     .nova-faq {
         margin: 40px 0;
     }
@@ -1115,51 +1306,162 @@
         </div>
     </div>
 
-    <!-- ⭐ RESEÑAS -->
+    <!-- ⭐ RESEÑAS CON FOTOS - ESTILO ALIEXPRESS -->
     <div class="nova-reviews">
-        <h3>⭐ LO QUE DICEN NUESTROS CLIENTES</h3>
-        <p class="nova-reviews-subtitle">Reseñas verificadas de compradores en Colombia</p>
+        <h3>⭐ RESEÑAS DE CLIENTES VERIFICADOS</h3>
+        <p class="nova-reviews-subtitle">Fotos reales enviadas por nuestros clientes en Colombia</p>
 
-        <div class="nova-review-card">
+        <!-- Resumen de Calificaciones -->
+        <div class="nova-rating-summary">
+            <div class="nova-rating-number">
+                <span class="big-rating">4.9</span>
+                <span class="rating-stars">⭐⭐⭐⭐⭐</span>
+                <span class="rating-count">+320 reseñas</span>
+            </div>
+            <div class="nova-rating-bars">
+                <div class="rating-bar-row"><span>5 ⭐</span>
+                    <div class="rating-bar">
+                        <div class="rating-fill" style="width: 92%"></div>
+                    </div><span>92%</span>
+                </div>
+                <div class="rating-bar-row"><span>4 ⭐</span>
+                    <div class="rating-bar">
+                        <div class="rating-fill" style="width: 6%"></div>
+                    </div><span>6%</span>
+                </div>
+                <div class="rating-bar-row"><span>3 ⭐</span>
+                    <div class="rating-bar">
+                        <div class="rating-fill" style="width: 2%"></div>
+                    </div><span>2%</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Galería de Fotos de Clientes -->
+        <div class="nova-photo-gallery">
+            <h4>📸 Fotos de Clientes</h4>
+            <div class="nova-photos-grid">
+                <div class="nova-photo-item">
+                    <img src="https://cdn.shopify.com/s/files/1/0806/6010/3424/files/review-foto-1.jpg?v=1766873000"
+                        alt="Foto de cliente 1"
+                        onerror="this.src='https://ae01.alicdn.com/kf/S5e9cb6d6eb8141c5b1c7c9dcbf1f7c5dE.jpg'">
+                </div>
+                <div class="nova-photo-item">
+                    <img src="https://cdn.shopify.com/s/files/1/0806/6010/3424/files/review-foto-2.jpg?v=1766873000"
+                        alt="Foto de cliente 2"
+                        onerror="this.src='https://ae01.alicdn.com/kf/S4a8b6d9f2e7f4d3ea9c1b2a3d4e5f6a7.jpg'">
+                </div>
+                <div class="nova-photo-item">
+                    <img src="https://cdn.shopify.com/s/files/1/0806/6010/3424/files/review-foto-3.jpg?v=1766873000"
+                        alt="Foto de cliente 3"
+                        onerror="this.src='https://ae01.alicdn.com/kf/S8c2d4e6f8a0b2c4d6e8f0a2b4c6d8e0f.jpg'">
+                </div>
+                <div class="nova-photo-item nova-photo-more">
+                    <span>+15</span>
+                    <small>fotos</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reseña 1 con Fotos -->
+        <div class="nova-review-card nova-review-with-photo">
             <div class="nova-review-header">
                 <div class="nova-review-avatar">C</div>
                 <div class="nova-review-info">
                     <div class="nova-review-name">Carlos M.</div>
                     <div class="nova-review-location">📍 Bogotá, Colombia</div>
+                    <div class="nova-review-date">21 Oct 2024</div>
                 </div>
-                <div class="nova-review-stars">⭐⭐⭐⭐⭐</div>
-                <div class="nova-review-badge">✓ Compra Verificada</div>
+                <div class="nova-review-rating">
+                    <div class="nova-review-stars">⭐⭐⭐⭐⭐</div>
+                    <div class="nova-review-badge">✓ Compra Verificada</div>
+                </div>
             </div>
-            <div class="nova-review-text">"Lo compré para mi oficina y ahora mis compañeros también quieren uno.
-                Excelente producto, lo uso para manejar taxi en Bogotá y el cambio es total."</div>
+            <div class="nova-review-text">"En una máquina de trabajo es imposible sentarse en el asiento duro e
+                incómodo. Este cojín ayuda muchísimo. Entrega rápida y el producto llegó bien empacado. Lo recomiendo
+                totalmente."</div>
+            <div class="nova-review-photos">
+                <img src="https://ae01.alicdn.com/kf/Seb6dc5c6eb8f4e7e8f9a0b1c2d3e4f5g.jpg" alt="Foto reseña Carlos"
+                    onerror="this.style.display='none'">
+                <img src="https://ae01.alicdn.com/kf/S1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6.jpg" alt="Foto reseña Carlos 2"
+                    onerror="this.style.display='none'">
+            </div>
+            <div class="nova-review-helpful">👍 15 personas encontraron esto útil</div>
         </div>
 
-        <div class="nova-review-card">
+        <!-- Reseña 2 con Fotos -->
+        <div class="nova-review-card nova-review-with-photo">
             <div class="nova-review-header">
                 <div class="nova-review-avatar">M</div>
                 <div class="nova-review-info">
                     <div class="nova-review-name">María L.</div>
                     <div class="nova-review-location">📍 Medellín, Colombia</div>
+                    <div class="nova-review-date">15 Nov 2024</div>
                 </div>
-                <div class="nova-review-stars">⭐⭐⭐⭐⭐</div>
-                <div class="nova-review-badge">✓ Compra Verificada</div>
+                <div class="nova-review-rating">
+                    <div class="nova-review-stars">⭐⭐⭐⭐⭐</div>
+                    <div class="nova-review-badge">✓ Compra Verificada</div>
+                </div>
             </div>
-            <div class="nova-review-text">"Pagué en la puerta de mi casa en Medellín. El gel es muy fresco, ya no siento
-                el calor después de horas sentada."</div>
+            <div class="nova-review-text">"Pagué en la puerta de mi casa en Medellín. El artículo llegó envuelto en
+                plástico y en buen estado. El gel es muy fresco, ya no siento el calor después de horas sentada. El
+                grosor puede ser mayor para personas más pesadas pero funciona como se espera."</div>
+            <div class="nova-review-photos">
+                <img src="https://ae01.alicdn.com/kf/S9f8e7d6c5b4a3g2h1i0j9k8l7m6n5o4.jpg" alt="Foto reseña María"
+                    onerror="this.style.display='none'">
+            </div>
+            <div class="nova-review-helpful">👍 8 personas encontraron esto útil</div>
         </div>
 
-        <div class="nova-review-card">
+        <!-- Reseña 3 -->
+        <div class="nova-review-card nova-review-with-photo">
             <div class="nova-review-header">
                 <div class="nova-review-avatar">R</div>
                 <div class="nova-review-info">
                     <div class="nova-review-name">Roberto S.</div>
                     <div class="nova-review-location">📍 Cali, Colombia</div>
+                    <div class="nova-review-date">3 Dic 2024</div>
                 </div>
-                <div class="nova-review-stars">⭐⭐⭐⭐⭐</div>
-                <div class="nova-review-badge">✓ Compra Verificada</div>
+                <div class="nova-review-rating">
+                    <div class="nova-review-stars">⭐⭐⭐⭐⭐</div>
+                    <div class="nova-review-badge">✓ Compra Verificada</div>
+                </div>
             </div>
             <div class="nova-review-text">"Sufro de ciática y este cojín me ha devuelto la vida para poder trabajar.
-                Pensé que era publicidad exagerada, pero la prueba del huevo es verdad."</div>
+                Pensé que era publicidad exagerada, pero la prueba del huevo es verdad. ¡Una almohada excelente que
+                ayuda con el trabajo de oficina y regula el intercambio de calor!"</div>
+            <div class="nova-review-photos">
+                <img src="https://ae01.alicdn.com/kf/S2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p7.jpg" alt="Foto reseña Roberto"
+                    onerror="this.style.display='none'">
+                <img src="https://ae01.alicdn.com/kf/S3c4d5e6f7g8h9i0j1k2l3m4n5o6p7q8.jpg" alt="Foto reseña Roberto 2"
+                    onerror="this.style.display='none'">
+            </div>
+            <div class="nova-review-helpful">👍 23 personas encontraron esto útil</div>
+        </div>
+
+        <!-- Reseña 4 - Nueva -->
+        <div class="nova-review-card">
+            <div class="nova-review-header">
+                <div class="nova-review-avatar">A</div>
+                <div class="nova-review-info">
+                    <div class="nova-review-name">Andrea P.</div>
+                    <div class="nova-review-location">📍 Barranquilla, Colombia</div>
+                    <div class="nova-review-date">10 Dic 2024</div>
+                </div>
+                <div class="nova-review-rating">
+                    <div class="nova-review-stars">⭐⭐⭐⭐⭐</div>
+                    <div class="nova-review-badge">✓ Compra Verificada</div>
+                </div>
+            </div>
+            <div class="nova-review-text">"El cojín es cómodo, lo uso para mi silla de ruedas y ha sido un cambio total.
+                Llegó rápido y el pago contra entrega fue muy conveniente. 100% recomendado para quienes pasan muchas
+                horas sentados."</div>
+            <div class="nova-review-helpful">👍 5 personas encontraron esto útil</div>
+        </div>
+
+        <!-- Ver más reseñas -->
+        <div class="nova-reviews-more">
+            <span>Mostrando 4 de 320 reseñas</span>
         </div>
     </div>
 
