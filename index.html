@@ -17,10 +17,9 @@
 <!-- ESTILOS CSS GLOBALES -->
 <style>
     /* ═══════════════════════════════════════════════════════════════════ */
-    /* OCULTAR NAVEGACIÓN - Descomenta estas líneas si quieres ocultar el menú */
+    /* OCULTAR NAVEGACIÓN Y PIE DE PÁGINA */
     /* ═══════════════════════════════════════════════════════════════════ */
 
-    /* Oculta el header completo (Inicio, Catálogo, Contacto) */
     header,
     .header,
     #header,
@@ -29,28 +28,29 @@
         display: none !important;
     }
 
-    /* Oculta la barra de anuncio "Welcome to our store" */
     .announcement-bar,
     #shopify-section-announcement-bar,
     .announcement {
         display: none !important;
     }
 
-    /* ═══════════════════════════════════════════════════════════════════ */
+    footer,
+    .footer,
+    #footer,
+    #shopify-section-footer {
+        display: none !important;
+    }
 
     /* ═══════════════════════════════════════════════════════════════════ */
     /* BOTONES DE SHOPIFY - Colores optimizados para conversión           */
-    /* Investigación: Orange/Red aumenta conversiones 21-34% vs negro     */
     /* ═══════════════════════════════════════════════════════════════════ */
 
-    /* Botón "Agregar al carrito" - NARANJA VIBRANTE (estilo Amazon) */
     button[name="add"],
     .product-form__submit,
     .btn.product-form__cart-submit,
     .add-to-cart,
     [data-add-to-cart],
-    .product-form button[type="submit"],
-    button.product-form__submit {
+    .product-form button[type="submit"] {
         background: linear-gradient(135deg, #FF6B35 0%, #FF8C42 50%, #FF6B35 100%) !important;
         background-size: 200% auto !important;
         color: white !important;
@@ -64,23 +64,17 @@
         box-shadow: 0 6px 25px rgba(255, 107, 53, 0.4) !important;
         transition: all 0.3s ease !important;
         cursor: pointer !important;
+        animation: buttonPulse 2s ease-in-out infinite !important;
     }
 
     button[name="add"]:hover,
-    .product-form__submit:hover,
-    .btn.product-form__cart-submit:hover,
-    .add-to-cart:hover {
+    .product-form__submit:hover {
         transform: scale(1.03) !important;
         box-shadow: 0 8px 35px rgba(255, 107, 53, 0.6) !important;
-        background-position: right center !important;
     }
 
-    /* Botón "Comprar ahora" - ROJO URGENCIA */
     .shopify-payment-button button,
-    .shopify-payment-button__button,
-    [data-shopify="payment-button"] button,
-    .shopify-payment-button .shopify-payment-button__button--unbranded,
-    button.shopify-payment-button__button {
+    .shopify-payment-button__button {
         background: linear-gradient(135deg, #FF2A00 0%, #FF4D2A 50%, #FF2A00 100%) !important;
         background-size: 200% auto !important;
         color: white !important;
@@ -90,19 +84,15 @@
         font-size: 18px !important;
         font-weight: 700 !important;
         text-transform: uppercase !important;
-        letter-spacing: 1px !important;
         box-shadow: 0 6px 25px rgba(255, 42, 0, 0.4) !important;
         transition: all 0.3s ease !important;
     }
 
-    .shopify-payment-button button:hover,
-    .shopify-payment-button__button:hover {
+    .shopify-payment-button button:hover {
         transform: scale(1.03) !important;
         box-shadow: 0 8px 35px rgba(255, 42, 0, 0.6) !important;
-        background-position: right center !important;
     }
 
-    /* Animación sutil de pulso para llamar la atención */
     @keyframes buttonPulse {
 
         0%,
@@ -115,14 +105,10 @@
         }
     }
 
-    button[name="add"],
-    .product-form__submit {
-        animation: buttonPulse 2s ease-in-out infinite !important;
-    }
-
+    /* ═══════════════════════════════════════════════════════════════════ */
+    /* ESTILOS DE LA LANDING */
     /* ═══════════════════════════════════════════════════════════════════ */
 
-    /* Reset y Variables */
     .nova-landing * {
         box-sizing: border-box;
     }
@@ -131,15 +117,8 @@
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         color: #1a1a2e;
         line-height: 1.6;
-        --primary: #FF2A00;
-        --primary-dark: #CC2200;
-        --accent: #00D4AA;
-        --warning: #FFB800;
-        --dark: #1a1a2e;
-        --light: #f8f9fa;
     }
 
-    /* Animaciones */
     @keyframes pulse {
 
         0%,
@@ -186,19 +165,6 @@
         }
     }
 
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    /* Hero Section */
     .nova-hero {
         background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
         padding: 40px 20px;
@@ -247,7 +213,6 @@
         color: #00D4AA;
     }
 
-    /* Badge de Tecnología */
     .nova-tech-badge {
         display: inline-block;
         background: linear-gradient(135deg, #00D4AA 0%, #00A085 100%);
@@ -262,7 +227,6 @@
         animation: bounce 2s ease-in-out infinite;
     }
 
-    /* Beneficios Cards */
     .nova-benefits {
         display: flex;
         flex-wrap: wrap;
@@ -306,7 +270,6 @@
         color: #666;
     }
 
-    /* CTA BUTTON - MEGA */
     .nova-cta-container {
         text-align: center;
         margin: 40px 0;
@@ -331,6 +294,7 @@
         animation: shimmer 3s linear infinite, glow 2s ease-in-out infinite;
         text-transform: uppercase;
         letter-spacing: 1px;
+        cursor: pointer;
     }
 
     .nova-cta-btn:hover {
@@ -354,7 +318,6 @@
         gap: 5px;
     }
 
-    /* URGENCIA BOX */
     .nova-urgency {
         background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
         border-radius: 20px;
@@ -414,7 +377,6 @@
         animation: pulse 2s ease-in-out infinite;
     }
 
-    /* COD Section */
     .nova-cod {
         background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
         border-radius: 20px;
@@ -454,7 +416,6 @@
         font-size: 24px;
     }
 
-    /* Sección Demo GIF */
     .nova-demo-section {
         text-align: center;
         margin: 40px 0;
@@ -487,7 +448,6 @@
         box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
     }
 
-    /* Tabla Comparativa */
     .nova-comparison {
         margin: 40px 0;
         overflow-x: auto;
@@ -536,7 +496,6 @@
         background: #e3f2fd;
     }
 
-    /* Características Lista */
     .nova-features {
         background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
         border-radius: 20px;
@@ -591,7 +550,6 @@
         font-size: 13px;
     }
 
-    /* Especificaciones */
     .nova-specs {
         background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
         border-radius: 20px;
@@ -639,7 +597,6 @@
         font-weight: 600;
     }
 
-    /* Reseñas */
     .nova-reviews {
         margin: 40px 0;
     }
@@ -722,7 +679,6 @@
         line-height: 1.7;
     }
 
-    /* FAQs */
     .nova-faq {
         margin: 40px 0;
     }
@@ -763,7 +719,6 @@
         border-top: 1px solid #eee;
     }
 
-    /* Trust Badges */
     .nova-trust {
         display: flex;
         justify-content: center;
@@ -797,7 +752,6 @@
         text-align: center;
     }
 
-    /* Contador de Clientes */
     .nova-social-proof {
         text-align: center;
         padding: 25px;
@@ -818,7 +772,6 @@
         font-weight: 600;
     }
 
-    /* Footer CTA */
     .nova-final-cta {
         background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
         border-radius: 20px;
@@ -839,7 +792,6 @@
         font-size: 16px;
     }
 
-    /* Responsive */
     @media (max-width: 600px) {
         .nova-hero h2 {
             font-size: 22px;
@@ -880,12 +832,9 @@
     <div class="nova-hero">
         <div class="nova-tech-badge">🧬 Tecnología Pro-Gel™ Original</div>
         <h2>¿TU ESPALDA NO AGUANTA MÁS DE <span>2 HORAS</span> EN LA SILLA? 🪑❌</h2>
-        <p class="nova-hero-text">
-            "Imagina trabajar o conducir por horas sintiendo la misma frescura y soporte que en el primer minuto.
-            Con la <strong>Tecnología de Panal Pro-Gel™</strong>, el peso de tu cuerpo se distribuye de forma
-            inteligente
-            para eliminar la presión en el coxis y la zona lumbar."
-        </p>
+        <p class="nova-hero-text">"Imagina trabajar o conducir por horas sintiendo la misma frescura y soporte que en el
+            primer minuto. Con la <strong>Tecnología de Panal Pro-Gel™</strong>, el peso de tu cuerpo se distribuye de
+            forma inteligente para eliminar la presión en el coxis y la zona lumbar."</p>
     </div>
 
     <!-- ⭐ SOCIAL PROOF COUNTER -->
@@ -894,7 +843,7 @@
         <div class="nova-social-proof-text">Colombianos ya están protegiendo su espalda con NovaMarket</div>
     </div>
 
-    <!-- 🎯 CTA #1 - PRIMER LLAMADO A LA ACCIÓN -->
+    <!-- 🎯 CTA #1 -->
     <div class="nova-cta-container">
         <a href="javascript:void(0)" onclick="scrollToCart()" class="nova-cta-btn">🛒 ¡QUIERO EL MÍO AHORA!</a>
         <div class="nova-cta-subtext">
@@ -946,9 +895,7 @@
         <h3>⚠️ ¡ÚLTIMAS UNIDADES CON 34% OFF!</h3>
         <p class="nova-urgency-text">Debido a la alta demanda de fin de año, las unidades con descuento se están
             agotando rápidamente.</p>
-        <div class="nova-stock-counter">
-            <span>📦</span> Solo quedan <strong>15</strong> unidades
-        </div>
+        <div class="nova-stock-counter"><span>📦</span> Solo quedan <strong>15</strong> unidades</div>
     </div>
 
     <!-- 🎬 DEMO GIF #1 -->
@@ -956,8 +903,8 @@
         <h3>¿TU ESPALDA PAGA EL <span>PRECIO</span> DE PASAR HORAS SENTADO?</h3>
         <p>Pasar largos periodos en sillas rígidas comprime tus discos vertebrales y agota tus músculos. No es solo
             cansancio, es un daño progresivo que el Pro-Gel™ detiene desde el primer segundo.</p>
-        <img src="https://cdn.shopify.com/s/files/1/0806/6010/3424/files/gif1.webp?v=1766761912"
-            alt="Demo Cojín Pro-Gel postura">
+        <img src="https://cdn.shopify.com/s/files/1/0806/6010/3424/files/Gemini_Generated_Image_aprnvdaprnvdaprn.png?v=1766789605"
+            alt="Demo Pro-Gel">
     </div>
 
     <!-- 🎯 CTA #2 -->
@@ -973,8 +920,7 @@
     <div class="nova-demo-section">
         <h3>DISEÑO DE PANAL PARA UN <span>SOPORTE INTELIGENTE</span></h3>
         <p>A diferencia de los cojines de espuma que se hunden, nuestra tecnología Pro-Gel™ distribuye tu peso de forma
-            uniforme y permite la circulación de aire. Mantente fresco y apoyado sin importar cuánto tiempo dure el
-            trancón o la jornada.</p>
+            uniforme y permite la circulación de aire.</p>
         <img src="https://cdn.shopify.com/s/files/1/0806/6010/3424/files/gif2.webp?v=1766762116"
             alt="Diseño de panal Pro-Gel">
     </div>
@@ -982,9 +928,9 @@
     <!-- 🎬 DEMO GIF #3 -->
     <div class="nova-demo-section">
         <h3>RECUPERA LA <span>COMODIDAD</span> QUE TU CUERPO MERECE</h3>
-        <p>Imagina terminar tu día de oficina o tu viaje en carro con la misma energía con la que empezaste. Protege tu
-            coxis, mejora tu postura y elimina la presión lumbar con el soporte de gel más avanzado del mercado.</p>
-        <img src="https://cdn.shopify.com/s/files/1/0806/6010/3424/files/GIF3.gif?v=1766763365" alt="Comodidad Pro-Gel">
+        <p>Imagina terminar tu día de oficina o tu viaje en carro con la misma energía con la que empezaste.</p>
+        <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjFpaWM3aG16dG94Mmt4YTBya3RyZmMwNnN6dnN5cmU3b3ppMXkxZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VNTRuDECkf5lbvXMpW/giphy.gif"
+            alt="Comodidad Pro-Gel">
     </div>
 
     <!-- 📊 TABLA COMPARATIVA -->
@@ -1043,45 +989,33 @@
         <div class="nova-feature-list">
             <div class="nova-feature-item">
                 <div class="nova-feature-check">✓</div>
-                <div class="nova-feature-text">
-                    <strong>Tecnología Ultra-Flex</strong>
-                    <span>Absorbe puntos de presión para un confort absoluto durante horas.</span>
-                </div>
+                <div class="nova-feature-text"><strong>Tecnología Ultra-Flex</strong><span>Absorbe puntos de presión
+                        para un confort absoluto durante horas.</span></div>
             </div>
             <div class="nova-feature-item">
                 <div class="nova-feature-check">✓</div>
-                <div class="nova-feature-text">
-                    <strong>Diseño de Panal</strong>
-                    <span>Permite la circulación de aire constante manteniendo el asiento siempre fresco.</span>
-                </div>
+                <div class="nova-feature-text"><strong>Diseño de Panal</strong><span>Permite la circulación de aire
+                        constante manteniendo el asiento siempre fresco.</span></div>
             </div>
             <div class="nova-feature-item">
                 <div class="nova-feature-check">✓</div>
-                <div class="nova-feature-text">
-                    <strong>Gel de Grado Médico</strong>
-                    <span>Material de alta durabilidad que nunca pierde su forma original.</span>
-                </div>
+                <div class="nova-feature-text"><strong>Gel de Grado Médico</strong><span>Material de alta durabilidad
+                        que nunca pierde su forma original.</span></div>
             </div>
             <div class="nova-feature-item">
                 <div class="nova-feature-check">✓</div>
-                <div class="nova-feature-text">
-                    <strong>Base Antideslizante</strong>
-                    <span>Se mantiene firme y seguro en cualquier silla, sofá o asiento de carro.</span>
-                </div>
+                <div class="nova-feature-text"><strong>Base Antideslizante</strong><span>Se mantiene firme y seguro en
+                        cualquier silla, sofá o asiento de carro.</span></div>
             </div>
             <div class="nova-feature-item">
                 <div class="nova-feature-check">✓</div>
-                <div class="nova-feature-text">
-                    <strong>Funda Lavable Incluida</strong>
-                    <span>Protege el cojín y es muy fácil de limpiar para mantener la higiene.</span>
-                </div>
+                <div class="nova-feature-text"><strong>Funda Lavable Incluida</strong><span>Protege el cojín y es muy
+                        fácil de limpiar para mantener la higiene.</span></div>
             </div>
             <div class="nova-feature-item">
                 <div class="nova-feature-check">✓</div>
-                <div class="nova-feature-text">
-                    <strong>Portabilidad Total</strong>
-                    <span>Diseño ligero y flexible para llevar a la oficina, viajes o estadios.</span>
-                </div>
+                <div class="nova-feature-text"><strong>Portabilidad Total</strong><span>Diseño ligero y flexible para
+                        llevar a la oficina, viajes o estadios.</span></div>
             </div>
         </div>
     </div>
@@ -1168,62 +1102,41 @@
 
     <!-- 🛡️ TRUST BADGES -->
     <div class="nova-trust">
-        <div class="nova-trust-badge">
-            <span>🛡️</span>
-            <span>Garantía<br>30 Días</span>
-        </div>
-        <div class="nova-trust-badge">
-            <span>💵</span>
-            <span>Pago<br>Contra Entrega</span>
-        </div>
-        <div class="nova-trust-badge">
-            <span>🚚</span>
-            <span>Envío<br>24-48 Horas</span>
-        </div>
-        <div class="nova-trust-badge">
-            <span>⭐</span>
-            <span>+1.500<br>Clientes Felices</span>
-        </div>
-        <div class="nova-trust-badge">
-            <span>🇨🇴</span>
-            <span>Envío<br>Toda Colombia</span>
-        </div>
+        <div class="nova-trust-badge"><span>🛡️</span><span>Garantía<br>30 Días</span></div>
+        <div class="nova-trust-badge"><span>💵</span><span>Pago<br>Contra Entrega</span></div>
+        <div class="nova-trust-badge"><span>🚚</span><span>Envío<br>24-48 Horas</span></div>
+        <div class="nova-trust-badge"><span>⭐</span><span>+1.500<br>Clientes Felices</span></div>
+        <div class="nova-trust-badge"><span>🇨🇴</span><span>Envío<br>Toda Colombia</span></div>
     </div>
 
     <!-- ❓ FAQs -->
     <div class="nova-faq">
         <h3>❓ PREGUNTAS FRECUENTES</h3>
-
         <div class="nova-faq-item">
             <div class="nova-faq-question">¿Cuánto tarda en llegar mi pedido?</div>
             <div class="nova-faq-answer">Realizamos despachos inmediatos. En ciudades principales como Bogotá, Medellín
                 o Cali, recibes en <strong>24 a 48 horas</strong>. Para el resto del país, de 3 a 5 días hábiles.</div>
         </div>
-
         <div class="nova-faq-item">
             <div class="nova-faq-question">¿Cómo puedo pagar mi Soporte Pro-Gel™?</div>
             <div class="nova-faq-answer">¡No te preocupes! Ofrecemos <strong>Pago Contra Entrega</strong>. Pagas el
                 producto en efectivo únicamente cuando el repartidor llegue a la puerta de tu casa.</div>
         </div>
-
         <div class="nova-faq-item">
             <div class="nova-faq-question">¿El producto tiene garantía?</div>
             <div class="nova-faq-answer">Sí, cuentas con <strong>30 días de garantía</strong> por defectos de fábrica.
                 En NovaMarket nos aseguramos de que recibas un producto de la más alta calidad.</div>
         </div>
-
         <div class="nova-faq-item">
             <div class="nova-faq-question">¿El cojín de gel produce calor después de un tiempo?</div>
             <div class="nova-faq-answer">Para nada. Gracias a su diseño estructural de panal, el aire circula
                 constantemente, manteniendo la superficie fresca incluso tras horas de uso continuo.</div>
         </div>
-
         <div class="nova-faq-item">
             <div class="nova-faq-question">¿Sirve para cualquier tipo de silla?</div>
             <div class="nova-faq-answer">¡Absolutamente! Su tamaño universal de 40x35cm se adapta a sillas de oficina,
                 asientos de carro, sofás, sillas de comedor e incluso sillas de ruedas.</div>
         </div>
-
         <div class="nova-faq-item">
             <div class="nova-faq-question">¿Es fácil de limpiar?</div>
             <div class="nova-faq-answer">Muy fácil. El cojín incluye una funda protectora negra que puedes retirar y
@@ -1238,8 +1151,8 @@
             la puerta de tu casa.</p>
         <a href="javascript:void(0)" onclick="scrollToCart()" class="nova-cta-btn">🛒 ¡PEDIR AHORA CON 34% OFF!</a>
         <div class="nova-cta-subtext" style="margin-top: 20px;">
-            <span style="color: #FFB800;">⚡ Oferta por tiempo limitado</span>
-            <span style="color: #00D4AA;">✅ Pago Contra Entrega</span>
+            <span style="color: #ffb800;">⚡ Oferta por tiempo limitado</span>
+            <span style="color: #00d4aa;">✅ Pago Contra Entrega</span>
         </div>
     </div>
 
@@ -1248,30 +1161,17 @@
 <!-- JAVASCRIPT PARA LOS BOTONES CTA -->
 <script>
     function scrollToCart() {
-        // Buscar el botón "Agregar al carrito" o "Comprar ahora" de Shopify
         var addToCartBtn = document.querySelector('button[name="add"], .product-form__submit, .add-to-cart, [data-add-to-cart], .shopify-payment-button, button.btn.product-form__cart-submit');
-
-        // Si no lo encuentra, buscar el formulario del producto
         if (!addToCartBtn) {
             addToCartBtn = document.querySelector('#product-form, .product-form, [data-product-form], form[action*="/cart/add"]');
         }
-
-        // Si aún no lo encuentra, buscar por el precio o título del producto
         if (!addToCartBtn) {
             addToCartBtn = document.querySelector('.product__info-container, .product-single, .product__title');
         }
-
         if (addToCartBtn) {
-            // Calcular la posición y hacer scroll suave
             var elementPosition = addToCartBtn.getBoundingClientRect().top + window.pageYOffset;
-            var offsetPosition = elementPosition - 100; // 100px de margen arriba
-
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
-
-            // Efecto visual para destacar el botón
+            var offsetPosition = elementPosition - 100;
+            window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
             setTimeout(function () {
                 addToCartBtn.style.transition = 'all 0.3s ease';
                 addToCartBtn.style.transform = 'scale(1.05)';
@@ -1282,7 +1182,6 @@
                 }, 500);
             }, 600);
         } else {
-            // Fallback: scroll hacia arriba donde está el formulario de compra
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     }
