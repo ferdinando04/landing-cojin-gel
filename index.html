@@ -1221,42 +1221,106 @@
 
 </div>
 
-<!-- JAVASCRIPT PARA LOS BOTONES CTA -->
+<!-- JAVASCRIPT PARA LOS BOTONES CTA Y MEJORAS -->
 <script>
+    // ═══════════════════════════════════════════════════════════════════
+    // CAMBIAR TEXTO DEL BOTÓN COD (Psicológicamente mejor)
+    // ═══════════════════════════════════════════════════════════════════
+    function cambiarTextoBotonCOD() {
+        var botonCOD = document.querySelector('#rsi_buy_now_button');
+        if (botonCOD) {
+            // Buscar el div interno que contiene el texto
+            var textoDiv = botonCOD.querySelector('div[style*="flex: 10"]');
+            if (textoDiv) {
+                textoDiv.innerHTML = '💵 ¡PAGO AL RECIBIR!';
+            } else {
+                // Alternativa: buscar cualquier div con el texto
+                var divs = botonCOD.querySelectorAll('div');
+                divs.forEach(function (div) {
+                    if (div.textContent.includes('Pagar') || div.textContent.includes('Reembolso')) {
+                        div.innerHTML = '💵 ¡PAGO AL RECIBIR!';
+                    }
+                });
+            }
+        }
+    }
+
+    // Ejecutar cuando carga la página y después de un delay (por si el botón se carga tarde)
+    document.addEventListener('DOMContentLoaded', function () {
+        setTimeout(cambiarTextoBotonCOD, 500);
+        setTimeout(cambiarTextoBotonCOD, 1500);
+        setTimeout(cambiarTextoBotonCOD, 3000);
+    });
+
+    // También ejecutar inmediatamente por si ya está cargado
+    cambiarTextoBotonCOD();
+
+    // ═══════════════════════════════════════════════════════════════════
+    // FUNCIÓN SCROLL A BOTÓN DE COMPRA
+    // ═══════════════════════════════════════════════════════════════════
     function scrollToCart() {
-        // PRIORIDAD 1: Botón Releasit COD "Pagar Contra Reembolso"
-        var addToCartBtn = document.querySelector('#rsi_buy_now_button');
+        var addToCartBtn = null;
 
-        // PRIORIDAD 2: Contenedor del carrito
+        // PRIORIDAD 1: Botón Releasit COD (el más común)
+        addToCartBtn = document.getElementById('rsi_buy_now_button');
+
+        // PRIORIDAD 2: Botón dentro del cart-wrapper
         if (!addToCartBtn) {
-            addToCartBtn = document.querySelector('#cart-wrapper button');
+            var wrapper = document.getElementById('cart-wrapper');
+            if (wrapper) {
+                addToCartBtn = wrapper.querySelector('button');
+            }
         }
 
-        // PRIORIDAD 3: Botones estándar de Shopify
+        // PRIORIDAD 3: Cualquier botón con clase que contenga "rsi"
         if (!addToCartBtn) {
-            addToCartBtn = document.querySelector('.shopify-payment-button, .product-form__submit, button[name="add"]');
+            addToCartBtn = document.querySelector('[class*="rsi_"], [id*="rsi_"]');
         }
 
+        // PRIORIDAD 4: Shopify payment button
+        if (!addToCartBtn) {
+            addToCartBtn = document.querySelector('.shopify-payment-button button');
+        }
+
+        // PRIORIDAD 5: Product form submit
+        if (!addToCartBtn) {
+            addToCartBtn = document.querySelector('.product-form__submit, button[name="add"]');
+        }
+
+        // Si encontramos el botón, hacer scroll
         if (addToCartBtn) {
-            var elementPosition = addToCartBtn.getBoundingClientRect().top + window.pageYOffset;
-            var offsetPosition = elementPosition - 120;
-            window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+            // Calcular posición
+            var rect = addToCartBtn.getBoundingClientRect();
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            var targetY = rect.top + scrollTop - 150; // 150px de margen arriba
 
-            // Efecto visual de destaque
+            // Scroll suave
+            window.scrollTo({
+                top: targetY,
+                behavior: 'smooth'
+            });
+
+            // Efecto de destaque después del scroll
             setTimeout(function () {
-                addToCartBtn.style.transition = 'all 0.3s ease';
-                addToCartBtn.style.transform = 'scale(1.08)';
-                addToCartBtn.style.boxShadow = '0 0 40px rgba(0, 212, 170, 0.8)';
+                addToCartBtn.style.transition = 'all 0.4s ease';
+                addToCartBtn.style.transform = 'scale(1.1)';
+                addToCartBtn.style.boxShadow = '0 0 50px rgba(0, 212, 170, 0.9)';
+
                 setTimeout(function () {
                     addToCartBtn.style.transform = 'scale(1)';
                     addToCartBtn.style.boxShadow = '';
-                }, 600);
-            }, 500);
+                }, 700);
+            }, 600);
+
         } else {
-            // Fallback: scroll arriba
+            // Fallback: scroll al inicio
             window.scrollTo({ top: 0, behavior: 'smooth' });
+            console.log('Botón de compra no encontrado');
         }
     }
+
+    // Asegurar que la función esté disponible globalmente
+    window.scrollToCart = scrollToCart;
 </script>
 
 <!-- FIN DEL CÓDIGO DE LA LANDING -->
